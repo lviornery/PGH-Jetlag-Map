@@ -576,21 +576,16 @@ let measuring = false;
 	function handleMeasure() {
 	  if (!measuring) {
 		selectLabel.style.display = "";
+        clearButton.style.display = "";
 		map.addInteraction(draw);
 		createHelpTooltip();
 		createMeasureTooltip();
 		measuring = true;
 	  } else {
 		selectLabel.style.display = "none";
+        clearButton.style.display = "none";
 		map.removeInteraction(draw);
 		map.removeOverlay(helpTooltip);
-		map.removeOverlay(measureTooltip);
-		const staticTooltips = document.getElementsByClassName("tooltip-static");
-		while (staticTooltips.length > 0) {
-		  staticTooltips[0].parentNode.removeChild(staticTooltips[0]);
-		}
-		measureLayer.getSource().clear();
-		sketch = null;
 		measuring = false;
 	  }
 	}
@@ -635,6 +630,21 @@ let measuring = false;
     measureControl.appendChild(selectLabel);
 
     selectLabel.style.display = "none";
+    
+    var clearButton = document.createElement("button");
+    clearButton.id="clear-measurement-button"
+    clearButton.innerHTML = "&nbsp;Clear All&nbsp;"
+    clearButton.onclick = function(){
+		map.removeOverlay(measureTooltip);
+		const staticTooltips = document.getElementsByClassName("tooltip-static");
+		while (staticTooltips.length > 0) {
+		  staticTooltips[0].parentNode.removeChild(staticTooltips[0]);
+		}
+		measureLayer.getSource().clear();
+		sketch = null;
+    }
+    measureControl.appendChild(clearButton);
+    clearButton.style.display = "none";
 	/**
 	 * Currently drawn feature.
 	 * @type {ol.Feature}
@@ -672,7 +682,7 @@ let measuring = false;
 	 * Message to show when the user is drawing a line.
 	 * @type {string}
 	 */
-	var continueLineMsg = 'Click to continue drawing the line';
+	var continueLineMsg = 'Click to finish drawing the line';
 
 
 	var typeSelect = document.getElementById("type");
@@ -681,7 +691,9 @@ let measuring = false;
 	typeSelect.onchange = function (e) {		  
 	  map.removeInteraction(draw);
 	  addInteraction();
-	  map.addInteraction(draw);		  
+	  map.addInteraction(draw);
+      createHelpTooltip();
+	  createMeasureTooltip();
 	};
 
 	var measureLineStyle = new ol.style.Style({
