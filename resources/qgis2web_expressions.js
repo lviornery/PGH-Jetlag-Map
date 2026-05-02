@@ -766,7 +766,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_label__1_eval_expression(context) {
+function exp_label_municipalities_1_eval_expression(context) {
     // if(MUNICIPALITY = 'PITTSBURGH', '', MUNICIPALITY)
 
     var feature = context.feature;
@@ -779,7 +779,7 @@ function exp_label__1_eval_expression(context) {
 }
 
 
-function exp_label__2_eval_expression(context) {
+function exp_label_neighborhoods_2_eval_expression(context) {
     // NEIGHBORHOOD + '\n (PITTSBURGH)'
 
     var feature = context.feature;

@@ -1,6 +1,6 @@
 var size = 0;
 var placement = 'point';
-function categories__1(feature, value, size, resolution, labelText,
+function categories_municipalities_1(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement) {
                 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
@@ -694,7 +694,7 @@ case 'PITCAIRN':
                     break;
 case 'PITTSBURGH':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 7.6}),
+        stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 7.6}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -1029,7 +1029,7 @@ default:
     })];
                     break;}};
 
-var style__1 = function(feature, resolution){
+var style_municipalities_1 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -1045,11 +1045,11 @@ var style__1 = function(feature, resolution){
     var offsetX = 0;
     var offsetY = 0;
     var placement = 'point';
-    if (exp_label__1_eval_expression(context) !== null) {
-        labelText = String(exp_label__1_eval_expression(context));
+    if (exp_label_municipalities_1_eval_expression(context) !== null) {
+        labelText = String(exp_label_municipalities_1_eval_expression(context));
     }
     
-    var style = categories__1(feature, value, size, resolution, labelText,
+    var style = categories_municipalities_1(feature, value, size, resolution, labelText,
                             labelFont, labelFill, bufferColor,
                             bufferWidth, placement);
 

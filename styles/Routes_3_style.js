@@ -1,12 +1,12 @@
 var size = 0;
 var placement = 'point';
-function categories__3(feature, value, size, resolution, labelText,
+function categories_Routes_3(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement) {
                 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
                 switch(valueStr) {case 'BUS':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(208,0,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 5.699999999999999}),
+        stroke: new ol.style.Stroke({color: 'rgba(208,0,0,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 5.699999999999999}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -14,7 +14,7 @@ function categories__3(feature, value, size, resolution, labelText,
                     break;
 case 'INCLINE':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(18,232,0,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 5.699999999999999}),
+        stroke: new ol.style.Stroke({color: 'rgba(18,232,0,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 5.699999999999999}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -22,7 +22,7 @@ case 'INCLINE':
                     break;
 case 'RAIL':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(76,59,226,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 5.699999999999999}),
+        stroke: new ol.style.Stroke({color: 'rgba(76,59,226,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 5.699999999999999}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -30,14 +30,14 @@ case 'RAIL':
                     break;
 default:
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(206,217,111,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 5.699999999999999}),
+        stroke: new ol.style.Stroke({color: 'rgba(206,217,111,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 5.699999999999999}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
                     break;}};
 
-var style__3 = function(feature, resolution){
+var style_Routes_3 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -57,7 +57,7 @@ var style__3 = function(feature, resolution){
         labelText = String("");
     }
     
-    var style = categories__3(feature, value, size, resolution, labelText,
+    var style = categories_Routes_3(feature, value, size, resolution, labelText,
                             labelFont, labelFill, bufferColor,
                             bufferWidth, placement);
 

@@ -1,6 +1,6 @@
 var size = 0;
 var placement = 'point';
-function categories__2(feature, value, size, resolution, labelText,
+function categories_neighborhoods_2(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement) {
                 var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
@@ -733,7 +733,7 @@ default:
     })];
                     break;}};
 
-var style__2 = function(feature, resolution){
+var style_neighborhoods_2 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -749,11 +749,11 @@ var style__2 = function(feature, resolution){
     var offsetX = 0;
     var offsetY = 0;
     var placement = 'point';
-    if (exp_label__2_eval_expression(context) !== null) {
-        labelText = String(exp_label__2_eval_expression(context));
+    if (exp_label_neighborhoods_2_eval_expression(context) !== null) {
+        labelText = String(exp_label_neighborhoods_2_eval_expression(context));
     }
     
-    var style = categories__2(feature, value, size, resolution, labelText,
+    var style = categories_neighborhoods_2(feature, value, size, resolution, labelText,
                             labelFont, labelFill, bufferColor,
                             bufferWidth, placement);
 
